@@ -100,7 +100,6 @@ body{
 
 .loginbox input[type ="submit"]:hover
 {
-    cursor:pointer;
     background:#fff/*#ffc107*/;
     color:#000;
 }
