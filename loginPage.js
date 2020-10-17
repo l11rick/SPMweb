@@ -12,16 +12,14 @@ function login() {
         if (user) {
             // User is signed in.
             alert("logged in")
-            if(Email = "Admin@gmail.com"){
+            if (user.uid == "VWuLgEckkfTHRgXtvzSF6W4rgoG2") {
                 window.location.href = "AdminmainPage.html"
-            }else{
+            } else {
                 window.location.href = 'mainPage.html'
             }
-                // ...
+            // ...
         } else {
             // User is signed out.
-            alert("cannot login")
-                // ...
         }
     });
 }
