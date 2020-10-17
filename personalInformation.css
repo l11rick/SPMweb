@@ -105,7 +105,6 @@ form{
     display: flex;
     justif-content: space-between;
 }
-
 input,select{
     padding:10px 15px;
 }

@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="onlineBooking.css">
-    <title>onlineBookingPage</title>
+    <link rel="stylesheet" href="personalInformation.css">
+    <title>mainPage</title>
 </head>
 
 <body>
@@ -14,56 +14,49 @@
         <nav>
             <ul>
                 <li class = "active"><a href="mainPage.html">Home</a></li>
-                <li><a href="#">Online Booking</a></li>
+                <li><a href="onlineBooking.html">Online Booking</a></li>
                 <li><a href="billerInfomationpage.html">Biller Information</a></li>
-                <li><a href="personalInformation.html">Personal Information</a></li>
+                <li><a href="#">Personal Information</a></li>
                 <li><a href="#" onclick="signOutMainPage()">Signout</a></li>
             </ul>
         </nav>
     </div>
 </header>
-<h1 class = "bookText" style="font-family:verdana">Booking Now</h1>
-<div class = "bookform">
+<h1 style="font-family:verdana">Personal Information</h1>
+
+<div class = "billerinfo">
     <form>
-    <div class = "form_field">
-        <p>Your Name</p>
-        <input type = "text" placeholder = "Your Name">
-    </div>
+        <div class = "form_field">
+            <p>Name</p>
+            <input type = "text" placeholder = "Name">
+        </div>
 
-    <div class = "form_field">
-        <p>Phone Number</p>
-        <input type = "text" placeholder = "Your Phone Number">
-    </div>
+        <div class = "form_field">
+            <p>Home address</p>
+            <input type = "text" placeholder = "Home address">
+        </div>
 
-    <div class = "form_field">
-        <p>Home Address</p>
-        <input type = "text" placeholder = "Your Home Address">
-    </div>
+        <div class = "form_field">
+            <p>Contact phone number</p>
+            <input type = "text" placeholder = "phone number">
+        </div>
 
-    <div class = "form_field">
-        <p>Date</p>
-        <input type = "date">
-    </div>
+        <div class = "form_field">
+            <p>Email address</p>
+            <input type = "text" placeholder = "email">
+        </div>
 
-    <div class = "form_field">
-        <p>Time</p>
-        <input type = "time">
-    </div>
+        <div class = "form_field">
+            <p>Extra information</p>
+            <input type = "text" placeholder = "extra information">
+        </div>
 
-    <div class = "form_field">
-        <p>Choose service</p>
-        <select name = "select" id = "#">
-            <option value = "cut">hair cut</option>
-            <option value = "wash">hair wash</option>
-            <option value = "color">hair color</option>
+        <button class = "btn">update</button>
 
-        </select>
-    </div>
-        <button class = "btn">Submit</button>
+
     </form>
-
-
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type = "text/javascript">
@@ -101,4 +94,4 @@
 
 </body>
 
-</html>
+</html>>
