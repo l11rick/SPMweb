@@ -1,7 +1,6 @@
 function login() {
     Email = document.getElementById("email_login").value;
     Password = document.getElementById("password_login").value;
-    var n = Email.localeCompare("Admin@gmail.com")
     firebase.auth().signInWithEmailAndPassword(Email, Password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
