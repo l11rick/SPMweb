@@ -3,25 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="mainPage.css">
-    <title>mainPage</title>
+    <link rel="stylesheet" href="loginPage.css">
+    <title>Login</title>
+
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <heading style="font-size:40px ; font-family:verdana">Beth's Salon</heading>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Online Booking</a></li>
-                    <li><a href="#">Biller Information</a></li>
-                    <li><a href="#">Personal Information</a></li>
-                    <li><a href="#" onclick="signOutMainPage()">Signout</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <h1 style="font-size:50px ; font-family:verdana"> SALON </h1>
+
+    <div class="textTable">
+        <img src="./image/scissor.png" class="scissor">
+        <p> </p>
+        <p0>Time:</p0>
+        <p>Monday to Sunday 10AM - 7PM</p>
+        <p0>Services include:</p0>
+        <p>hair dressing, waxing, manicure, pedicure. </p>
+        <p0>Address:</p0>
+        <p>Brunswick, Melbourne</p>
+    </div>
+
+    <div class="loginbox">
+        <h1> Login </h1>
+        <from>
+            <p>Username</p>
+            <input type="text" name="" placeholder="Enter Username" id='email_login'>
+            <p>Password</p>
+
+            <input type="password" name="" placeholder="Enter Password" id='password_login'>
+            <!--input type="submit" name="" value="Login" onclick="window.location.href='mainPage.html';"-->
+            <input type="submit" name="" value="Login" onclick=login()>
+
+            <a href="registerPage.html">Don't have an account?</a>
+
+        </from>
+    </div>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -49,8 +64,5 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 
-    <script src="mainPage.js "></script>
-
+    <script src="loginPage.js"></script>
 </body>
-
-</html>
