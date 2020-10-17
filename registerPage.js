@@ -41,7 +41,7 @@ function register() {
             })
 
 
-            /*window.location.href = 'mainPage.html'*/
+            window.location.href = 'mainPage.html'
 
         } else {}
     });
