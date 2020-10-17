@@ -12,7 +12,11 @@ function login() {
         if (user) {
             // User is signed in.
             alert("logged in")
-            window.location.href = 'mainPage.html'
+            if(Email = "Admin@gmail.com"){
+                window.location.href = "AdminmainPage.html"
+            }else{
+                window.location.href = 'mainPage.html'
+            }
                 // ...
         } else {
             // User is signed out.

@@ -31,7 +31,6 @@ function register() {
                 })
                 .then(function() {
                     console.log("Document successfully written!");
-                    window.location.href = 'mainPage.html'
                 })
                 .catch(function(error) {
                     console.error("Error writing document: ", error);
