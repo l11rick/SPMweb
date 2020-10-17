@@ -1,6 +1,7 @@
 function login() {
     Email = document.getElementById("email_login").value;
     Password = document.getElementById("password_login").value;
+    var n = Email.localeCompare("Admin@gmail.com")
     firebase.auth().signInWithEmailAndPassword(Email, Password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -12,7 +13,7 @@ function login() {
         if (user) {
             // User is signed in.
             alert("logged in")
-            if(Email = "Admin@gmail.com"){
+            if(!n){
                 window.location.href = "AdminmainPage.html"
             }else{
                 window.location.href = 'mainPage.html'
