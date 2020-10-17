@@ -79,7 +79,14 @@ nav a:hover::before{
     width:100%
 }
 
-.bookform{
+h1{
+    margin: 30px;
+    padding: 10px 0;
+    font-size: 35px;
+    text-transform:uppercase;
+}
+
+.billerinfo{
 
     margin:20px 600px;
     box-shadow: black;
@@ -87,12 +94,6 @@ nav a:hover::before{
     grid-template-columns: 50%;
     padding:20px 0;
 
-}
-.bookText{
-    margin: 30px;
-    padding: 10px 0;
-    font-size: 35px;
-    text-transform:uppercase;
 }
 
 form{
@@ -107,7 +108,6 @@ form{
 input,select{
     padding:10px 15px;
 }
-
 .btn{
     background-color:black;
     color: white;
