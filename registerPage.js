@@ -30,19 +30,12 @@ function register() {
                     phone: document.getElementById("phone_register").value
                 })
                 .then(function() {
-                    console.log("Document successfully written!");
+                    alert("Document successfully written!");
+                    window.location.href = 'mainPage.html'
                 })
                 .catch(function(error) {
-                    console.error("Error writing document: ", error);
+                    alert("Error writing document: ", error);
                 });
-
-            db.collection("users").get().then(snapshot => {
-                console.log(snapshot.docs)
-            })
-
-
-            window.location.href = 'mainPage.html'
-
         } else {}
     });
 }
