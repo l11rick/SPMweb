@@ -28,15 +28,15 @@
     <form>
         <div class = "form_field">
             <p>Name on invoice</p>
-            <input type = "text" placeholder = "Name on invoice">
+            <input type = "text" placeholder = "Name on invoice" id='name_bill'>
         </div>
 
         <div class = "form_field">
             <p>Biller email address</p>
-            <input type = "text" placeholder = "Biller email address">
+            <input type = "text" placeholder = "Biller email address" id='home_bill'>
         </div>
 
-        <input type = "button" value = "update">
+        <input type = "button" value = "update" onclick="updateBill()">
 
 
     </form>
@@ -76,6 +76,35 @@
 </script>
 
 <script src="mainPage.js "></script>
+
+<script>
+    const db = firebase.firestore();
+
+    function updateBill(){
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                var userRef = db.collection("users").doc(user.uid);
+
+                return userRef.update({
+                    invoiceName: document.getElementById('name_bill').value,
+                    invoiceAddress: document.getElementById('home_bill').value,
+                })
+                .then(function() {
+                    alert("Document successfully updated!");
+                    window.location.href = 'mainPage.html'
+                })
+                .catch(function(error) {
+                    // The document probably doesn't exist.
+                    alert("Error updating document: ", error);
+                });
+            } else {
+                alert("not logged in")
+                window.location.href = 'loginPage.html'
+            }
+        });
+    }
+</script>
 
 </body>
 

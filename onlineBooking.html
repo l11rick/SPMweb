@@ -27,39 +27,39 @@
     <form>
     <div class = "form_field">
         <p>Your Name</p>
-        <input type = "text" placeholder = "Your Name">
+        <input type = "text" placeholder = "Your Name" id='name_booking'>
     </div>
 
     <div class = "form_field">
         <p>Phone Number</p>
-        <input type = "text" placeholder = "Your Phone Number">
+        <input type = "text" placeholder = "Your Phone Number" id='phone_booking'>
     </div>
 
     <div class = "form_field">
         <p>Home Address</p>
-        <input type = "text" placeholder = "Your Home Address">
+        <input type = "text" placeholder = "Your Home Address" id='home_booking'>
     </div>
 
     <div class = "form_field">
         <p>Date</p>
-        <input type = "date">
+        <input type = "date" id='date_booking'>
     </div>
 
     <div class = "form_field">
         <p>Time</p>
-        <input type = "time">
+        <input type = "time" step="3600" id='time_booking'>
     </div>
 
     <div class = "form_field">
         <p>Choose service</p>
-        <select name = "select" id = "#">
-            <option value = "cut">hair cut</option>
-            <option value = "wash">hair wash</option>
-            <option value = "color">hair color</option>
+        <select name = "select" id = "service_booking">
+            <option value = "hair cut">hair cut</option>
+            <option value = "hair wash">hair wash</option>
+            <option value = "hair color">hair color</option>
 
         </select>
     </div>
-        <input type = "button" value = "Confirm">
+        <input type = "button" value = "Submit" onclick="submitBooking()">
     </form>
 
 
@@ -97,7 +97,43 @@
     firebase.initializeApp(firebaseConfig);
 </script>
 
-<script src="mainPage.js "></script>
+<script src="mainPage.js"></script>
+
+<script>
+
+    const db = firebase.firestore();
+
+    function submitBooking(){
+        var e = document.getElementById("service_booking");
+        var service1 = e.options[e.selectedIndex].value;
+        var dateBook = document.getElementById('date_booking').value;
+        var timeBook = document.getElementById('time_booking').value;
+        
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                db.collection("bookings").doc(user.uid+"_"+dateBook+"_"+timeBook).set({
+                        customerName: document.getElementById('name_booking').value,
+                        phoneNumber: document.getElementById('phone_booking').value,
+                        homeAddress: document.getElementById('home_booking').value,
+                        Date: dateBook,
+                        Time: timeBook,
+                        Service: service1,
+                    })
+                    .then(function() {
+                        alert("Document successfully written!");
+                        window.location.href = 'mainPage.html'
+                    })
+                    .catch(function(error) {
+                        alert("Error writing document: ", error);
+                    });
+            } else {
+                alert("not logged in")
+                window.location.href = 'loginPage.html'
+            }
+        });
+    }
+</script>
 
 </body>
 
