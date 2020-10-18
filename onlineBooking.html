@@ -59,6 +59,12 @@
 
         </select>
     </div>
+
+    <div class = "form_field">
+        <p>Message</p>
+        <input type = "text" placeholder = "Optional Message here" id='message_booking'>
+    </div>
+
         <input type = "button" value = "Submit" onclick="submitBooking()">
     </form>
 
@@ -100,7 +106,6 @@
 <script src="mainPage.js"></script>
 
 <script>
-
     const db = firebase.firestore();
 
     function submitBooking(){
@@ -119,9 +124,11 @@
                         Date: dateBook,
                         Time: timeBook,
                         Service: service1,
+                        Message: document.getElementById('message_booking').value
                     })
                     .then(function() {
                         alert("Document successfully written!");
+                        sendEmail()
                         window.location.href = 'mainPage.html'
                     })
                     .catch(function(error) {
@@ -132,6 +139,44 @@
                 window.location.href = 'loginPage.html'
             }
         });
+    }
+</script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail() {
+        var e = document.getElementById("service_booking");
+        var service1 = e.options[e.selectedIndex].value;
+        var dateBook = document.getElementById('date_booking').value;
+        var timeBook = document.getElementById('time_booking').value;
+        var customerName = document.getElementById('name_booking').value;
+        var phoneNumber = document.getElementById('phone_booking').value;
+        var homeAddress = document.getElementById('home_booking').value;
+        var message = document.getElementById('message_booking').value;
+
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username : "xudongguan1127@gmail.com",
+            Password : "971127Abc",
+            To : 'xudongguan1127@gmail.com',
+            From : "xudongguan1127@gmail.com",
+            Subject : "new booking",
+            Body : "Hi Beth, you have a new booking, here are the details" + "\
+            ---name: "+customerName+ "\
+            ---phone number: "+phoneNumber+ "\
+            ---home address: "+homeAddress+ "\
+            ---Date: "+dateBook+ "\
+            ---Time: "+timeBook+ "\
+            ---Service: "+service1 + "\
+            ---Message: "+message
+        }).then(function(response){
+            if (response=='OK') {
+                alert("mail sent");
+            } else {
+                alert("error");
+            }
+        }
+        );
     }
 </script>
 

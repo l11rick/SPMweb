@@ -1,5 +1,3 @@
-const db = firebase.firestore();
-
 function signOutMainPage() {
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
