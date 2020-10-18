@@ -107,27 +107,31 @@ form{
 input,select{
     padding:10px 15px;
 }
-
-.btn{
-    background-color:black;
-    color: white;
-    padding: 10px 20px;
+input[type="button"]
+{
     border: none;
-    font-size:18px;
+    outline: none;
+    height:40px;
+    background: whitesmoke;
+    color:black;
+    font-size: 18px;
+    border-radiux: 20px;
     border-radius:100px;
     -web-border-radius: 100px;
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
     -o-border-radius: 100px;
     box-shadow: 7px 10px 12px black;
-    cursor:pointer;
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
     -o-transition: all .3s;
 }
-.btn:hover{
+input[type ="button"]:hover
+{
+    background:black/*#ffc107*/;
+    color:whitesmoke;
     transform:scale(1.03);
     -webkit-transform:scale(1.03);
     -moz-transform:scale(1.03);
