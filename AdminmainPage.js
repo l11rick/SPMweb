@@ -17,10 +17,13 @@ db.collection("bookings").get().then(function(querySnapshot) {
         console.log(doc.data());
         $('#view_area').append(`
         <div class = "card"> 
-            <p font-family:verdana">${doc.data().customerName}</p>
-            <p font-family:verdana">${doc.data().Date}</p>
-            <p font-family:verdana">${doc.data().Time}</p>
-            <p font-family:verdana">${doc.data().Service}</p>
+            <p font-family:verdana">Customer Name: ${doc.data().customerName}</p>
+            <p font-family:verdana">Date: ${doc.data().Date}</p>
+            <p font-family:verdana">Time: ${doc.data().Time}</p>
+            <p font-family:verdana">Phone Number: ${doc.data().phoneNumber}</p>
+            <p font-family:verdana">Home Address: ${doc.data().homeAddress}</p>
+            <p font-family:verdana">Message: ${doc.data().Message}</p>
+            
             <button type="button" onclick = "delete();">Delete</button> 
         </div>
         `)
