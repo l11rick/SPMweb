@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="container">
-            <heading style="font-size:40px ; font-family:verdana">Beth's Salon</heading>
+            <heading style="font-size:40px ; font-family:Vivaldi">Beth's Salon</heading>
             <nav>
                 <ul>
                     <li class = "active"><a href="#">Home</a></li>
@@ -22,6 +22,13 @@
             </nav>
         </div>
     </header>
+
+    <body>
+    <div class = "view_area d-flex flex-wrap" id="view_area">
+
+    </div>
+
+    </body>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type = "text/javascript">
@@ -36,6 +43,8 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
 
     <script>
         // TODO: Replace the following with your app's Firebase project configuration
@@ -53,6 +62,10 @@
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+
     </script>
 
     <script src="mainPage.js "></script>

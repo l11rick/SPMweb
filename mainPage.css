@@ -78,3 +78,43 @@ nav a::before{
 nav a:hover::before{
     width:100%
 }
+
+.data{
+    width: 80%;
+    margin:100px auto;
+    color:#fff;
+    font-size:30px;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px
+
+}
+ul{
+    padding: 20px;
+    margin-right: 20px;
+}
+.card{
+    padding:20px;
+    margin-right:20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px
+}
+button{
+    border: none;
+    outline: none;
+    height:20px;
+    background: white;
+    color:black;
+    font-size: 18px;
+    border-radiux: 20px;
+}
+button:hover
+{
+    background:#000/*#ffc107*/;
+    color:#fff;
+}

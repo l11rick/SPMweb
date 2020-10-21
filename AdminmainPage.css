@@ -78,3 +78,26 @@ nav a::before{
 nav a:hover::before{
     width:100%
 }
+
+.card{
+    padding:20px;
+    margin-right:20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px
+}
+button{
+    border: none;
+    outline: none;
+    height:20px;
+    background: white;
+    color:black;
+    font-size: 18px;
+    border-radiux: 20px;
+}
+button:hover
+{
+    background:#000/*#ffc107*/;
+    color:#fff;
+}

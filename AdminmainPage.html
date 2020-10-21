@@ -6,18 +6,25 @@
     <title>adminmainPage</title>
 </head>
 <body>
-<header>
-    <div class="container">
-        <heading style="font-size:40px ; font-family:verdana">Beth's Salon</heading>
-        <nav>
-            <ul>
-                <li><a href="#">Previous Booking</a></li>
-                <li><a href="#">Coming Booking</a></li>
-                <li><a href="#" onclick="signOutAdminMainPage()">Signout</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container">
+            <heading style="font-size:40px ; font-family:Vivaldi">Beth's Salon</heading>
+            <nav>
+                <ul>
+                    <li><a href="#">Previous Booking</a></li>
+                    <li><a href="#">Coming Booking</a></li>
+                    <li><a href="#" onclick="signOutAdminMainPage()">Signout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+    <div class = "view_area d-flex flex-wrap" id="view_area">
+
     </div>
-</header>
+
+    </body>
 
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -25,6 +32,9 @@
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 
 <script>
     // TODO: Replace the following with your app's Firebase project configuration
