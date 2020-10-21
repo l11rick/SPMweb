@@ -124,7 +124,8 @@
                         Date: dateBook,
                         Time: timeBook,
                         Service: service1,
-                        Message: document.getElementById('message_booking').value
+                        Message: document.getElementById('message_booking').value,
+                        UID: user.uid
                     })
                     .then(function() {
                         alert("Document successfully written!");
