@@ -11,7 +11,10 @@ function signOutAdminMainPage() {
 }
 const db = firebase.firestore();
 
-db.collection("bookings").get().then(function(querySnapshot) {
+let today = new Date().toISOString().slice(0, 10)
+console.log(today)
+
+db.collection("bookings").where("Date", "==", today).get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.data());
