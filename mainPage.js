@@ -67,8 +67,8 @@ function sendEmail(name, date, time) {
         Password : "971127Abc",
         To : 'xudongguan1127@gmail.com',
         From : "xudongguan1127@gmail.com",
-        Subject : "new booking",
-        Body : "Hi Admin, <br><br>This booking has been canceled, here are the details" + "<br><br>\
+        Subject : "booking cancellation",
+        Body : "Hi Admin, <br><br>This booking has been cancelled, here are the details" + "<br><br>\
         ---name: "+name+ "<br>\
         ---Date: "+date+ "<br>\
         ---Time: "+time+ "<br>\
