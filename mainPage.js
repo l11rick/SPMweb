@@ -26,7 +26,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     <p font-family:verdana">Time: -- ${doc.data().Time}</p>
                     <p font-family:verdana">Service: -- ${doc.data().Service}</p>
                     <p font-family:verdana">${doc.data().Message}</p>
-                    <button type="button" onclick = "deleteBooking('${doc.data().customerName}','${doc.data().Date}','${doc.data().Time}');">Delete</button>               
+                    <button type="button" onclick = "deleteBooking('${doc.data().customerName}','${doc.data().Date}','${doc.data().Time}');">Cancel</button>               
                     </div>
                 `)
                 //renderbook(doc)

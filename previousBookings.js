@@ -27,7 +27,7 @@ db.collection("bookings").where("Date", "<", today).get().then(function(querySna
         <p font-family:verdana">Time: -- ${doc.data().Time}</p>
         <p font-family:verdana">Service: -- ${doc.data().Service}</p>
         <p font-family:verdana">${doc.data().Message}</p>
-        <button type="button" onclick = "deleteBookingAdmin('${doc.data().customerName}','${doc.data().Date}','${doc.data().Time}');">Delete</button>               
+        <button type="button" onclick = "deleteBookingAdmin('${doc.data().customerName}','${doc.data().Date}','${doc.data().Time}');">Cancel</button>               
         </div>
         `)
     });
