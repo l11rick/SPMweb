@@ -26,7 +26,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     <p font-family:verdana">Time: -- ${doc.data().Time}</p>
                     <p font-family:verdana">Service: -- ${doc.data().Service}</p>
                     <p font-family:verdana">${doc.data().Message}</p>
-                    <button type="button" onclick = "deleteBooking('${doc.data().Date}','${doc.data().Time}');">Delete</button>               
+                    <button type="button" onclick = "deleteBooking('${doc.data().customerName}','${doc.data().Date}','${doc.data().Time}');">Delete</button>               
                     </div>
                 `)
                 //renderbook(doc)
@@ -40,11 +40,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     };
 })
 
-function deleteBooking(date,time) {
+function deleteBooking(name,date,time) {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            db.collection("bookings").doc(user.uid+"_"+date+"_"+time).delete().then(function() {
+            db.collection("bookings").doc(name+"_"+date+"_"+time).delete().then(function() {
                 console.log("Document successfully deleted!");
                 location.reload()
             }).catch(function(error) {

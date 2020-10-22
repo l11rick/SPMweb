@@ -111,14 +111,15 @@
     function submitBooking(){
         var e = document.getElementById("service_booking");
         var service1 = e.options[e.selectedIndex].value;
+        var nameBook = document.getElementById('name_booking').value;
         var dateBook = document.getElementById('date_booking').value;
         var timeBook = document.getElementById('time_booking').value;
         
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 // User is signed in.
-                db.collection("bookings").doc(user.uid+"_"+dateBook+"_"+timeBook).set({
-                        customerName: document.getElementById('name_booking').value,
+                db.collection("bookings").doc(nameBook+"_"+dateBook+"_"+timeBook).set({
+                        customerName: nameBook,
                         phoneNumber: document.getElementById('phone_booking').value,
                         homeAddress: document.getElementById('home_booking').value,
                         Date: dateBook,
@@ -162,13 +163,13 @@
             To : 'xudongguan1127@gmail.com',
             From : "xudongguan1127@gmail.com",
             Subject : "new booking",
-            Body : "Hi Beth, you have a new booking, here are the details" + "\
-            ---name: "+customerName+ "\
-            ---phone number: "+phoneNumber+ "\
-            ---home address: "+homeAddress+ "\
-            ---Date: "+dateBook+ "\
-            ---Time: "+timeBook+ "\
-            ---Service: "+service1 + "\
+            Body : "Hi Beth, <br>you have a new booking, here are the details" + "<br><br>\
+            ---name: "+customerName+ "<br>\
+            ---phone number: "+phoneNumber+ "<br>\
+            ---home address: "+homeAddress+ "<br>\
+            ---Date: "+dateBook+ "<br>\
+            ---Time: "+timeBook+ "<br>\
+            ---Service: "+service1 + "<br>\
             ---Message: "+message
         }).then(function(response){
             if (response=='OK') {
