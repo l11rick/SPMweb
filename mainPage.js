@@ -46,6 +46,7 @@ function deleteBooking(name,date,time) {
             // User is signed in.
             db.collection("bookings").doc(name+"_"+date+"_"+time).delete().then(function() {
                 console.log("Document successfully deleted!");
+                sendEmail(name, date, time)
                 location.reload()
             }).catch(function(error) {
                 console.error("Error removing document: ", error);
@@ -56,4 +57,28 @@ function deleteBooking(name,date,time) {
         }
     });
     
+}
+
+function sendEmail(name, date, time) {
+
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username : "xudongguan1127@gmail.com",
+        Password : "971127Abc",
+        To : 'xudongguan1127@gmail.com',
+        From : "xudongguan1127@gmail.com",
+        Subject : "new booking",
+        Body : "Hi Admin, <br><br>This booking has been canceled, here are the details" + "<br><br>\
+        ---name: "+name+ "<br>\
+        ---Date: "+date+ "<br>\
+        ---Time: "+time+ "<br>\
+        <br>This appointment has been removed from the booking list."
+    }).then(function(response){
+        if (response=='OK') {
+            alert("mail sent");
+        } else {
+            alert("error");
+        }
+    }
+    );
 }
