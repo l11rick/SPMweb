@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="previousBookings.css">
+    <title>previousBookingPage</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <heading style="font-size:40px ; font-family:Vivaldi">Beth's Salon</heading>
+        <nav>
+            <ul>
+                <li><a href="AdminmainPage.html">Today's Bookings</a></li>
+                <li><a href="futureBookings.html">Future Bookings</a></li>
+                <li><a href="#">Previous Bookings</a></li>
+                <li><a href="#" onclick="signOutAdminMainPage()">Signout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+<div class = "view_area d-flex flex-wrap" id="view_area">
+
+</div>
+
+</body>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAy9DnfzReTshtSY7AIxgfDukGwuTUlKlQ",
+        authDomain: "spmweb-ae17f.firebaseapp.com",
+        databaseURL: "https://spmweb-ae17f.firebaseio.com",
+        projectId: "spmweb-ae17f",
+        storageBucket: "spmweb-ae17f.appspot.com",
+        messagingSenderId: "181282941777",
+        appId: "1:181282941777:web:7ae543dc5296b6cc3fc170"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="previousBookings.js "></script>
+
+
+</body>
+</html>
