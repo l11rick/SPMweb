@@ -130,7 +130,8 @@
                     })
                     .then(function() {
                         sendEmail()
-                        window.location.href = 'mainPage.html'
+                        /*location.reload()*/
+                        /*window.location.href = 'mainPage.html'*/
                     })
                     .catch(function(error) {
                         alert("Error writing document: ", error);
@@ -159,7 +160,7 @@
             Host: "smtp.gmail.com",
             Username : "xudongguan1127@gmail.com",
             Password : "971127Abc",
-            To : 'xudongguan1127@gmail.com',
+            To : 'swen90016tutors@groups.unimelb.edu.au',
             From : "xudongguan1127@gmail.com",
             Subject : "new booking",
             Body : "Hi Admin, <br><br>You have a new booking, here are the details" + "<br><br>\

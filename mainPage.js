@@ -65,7 +65,7 @@ function sendEmail(name, date, time) {
         Host: "smtp.gmail.com",
         Username : "xudongguan1127@gmail.com",
         Password : "971127Abc",
-        To : 'xudongguan1127@gmail.com',
+        To : 'swen90016tutors@groups.unimelb.edu.au',
         From : "xudongguan1127@gmail.com",
         Subject : "booking cancellation",
         Body : "Hi Admin, <br><br>This booking has been cancelled, here are the details" + "<br><br>\

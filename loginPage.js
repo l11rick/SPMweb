@@ -1,7 +1,7 @@
 function login() {
     Email = document.getElementById("email_login").value;
     Password = document.getElementById("password_login").value;
-    var n = Email.localeCompare("beth@gmail.com")
+    var n = Email.localeCompare("swen90016tutors@groups.unimelb.edu.au")
     firebase.auth().signInWithEmailAndPassword(Email, Password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
